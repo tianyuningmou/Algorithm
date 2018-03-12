@@ -44,8 +44,21 @@ class Solution:
                 continue
         return result_all
 
+    def find_mix_numbers_with_sum(self, array, t_sum):
+        ret = []
+        for i, num in enumerate(array):
+            tmp = t_sum - num
+            if tmp in array[i + 1:]:
+                ret.append((num * tmp, num, tmp))
+        if not ret:
+            return ret
+        # 默认(num*tmp, num, tmp) num*tmp作为关键码求最小
+        tmp_ret = min(ret)
+        return tmp_ret[1:]
+
 
 if __name__ == '__main__':
     solution = Solution()
-    result = solution.find_numbers_with_sum([2, 5, 3, 9, 7], 12)
-    print(result)
+    result_0 = solution.find_numbers_with_sum([2, 5, 3, 9, 7], 12)
+    result_1 = solution.find_mix_numbers_with_sum([2, 5, 3, 9, 7], 12)
+    print(result_0, result_1)
