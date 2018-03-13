@@ -56,9 +56,32 @@ class Solution:
         tmp_ret = min(ret)
         return tmp_ret[1:]
 
+    def find_continuous_sequence(self, t_sum):
+        # 验证至少2个数
+        if t_sum < 3:
+            return []
+        small, big = 1, 2
+        # 最大值 -- 终止条件
+        middle = (1 + t_sum) >> 1
+        cur_sum = small + big
+        ret = []
+        while small < middle:
+            if cur_sum == t_sum:
+                ret.append(range(small, big + 1))
+                # 当前和大于t_sum，减小small
+            while cur_sum > t_sum and small < middle:
+                cur_sum -= small
+                small += 1
+                if cur_sum == t_sum:
+                    ret.append(range(small, big + 1))
+            big += 1
+            cur_sum += big
+        return ret
+
 
 if __name__ == '__main__':
     solution = Solution()
     result_0 = solution.find_numbers_with_sum([2, 5, 3, 9, 7], 12)
     result_1 = solution.find_mix_numbers_with_sum([2, 5, 3, 9, 7], 12)
-    print(result_0, result_1)
+    result_2 = solution.find_continuous_sequence(3)
+    print(result_0, result_1, result_2)
