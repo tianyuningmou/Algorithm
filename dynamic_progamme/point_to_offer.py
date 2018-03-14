@@ -78,10 +78,26 @@ class Solution:
             cur_sum += big
         return ret
 
+    def find_greatest_sum_of_subArray(self, array):
+        # 数组为空返回0
+        if not array:
+            return 0
+        # 初始值负无穷
+        dp = [float('-inf')]
+        for i, n in enumerate(array):
+            # dp[i]前面最大的连续数组和，如果小于等于0，那么加上当前值只会更小，更新dp[i+1]=n
+            if dp[i] <= 0:
+                dp.append(n)
+            else:
+                # 当前值为0，且前面连续最大和为正，说明加上当前数一定大于之前和
+                dp.append(dp[i] + n)
+        return max(dp)
+
 
 if __name__ == '__main__':
     solution = Solution()
     result_0 = solution.find_numbers_with_sum([2, 5, 3, 9, 7], 12)
     result_1 = solution.find_mix_numbers_with_sum([2, 5, 3, 9, 7], 12)
     result_2 = solution.find_continuous_sequence(3)
-    print(result_0, result_1, result_2)
+    result_3 = solution.find_greatest_sum_of_subArray([3, 5, 4])
+    print(result_0, result_1, result_2, result_3)
