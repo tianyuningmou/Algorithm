@@ -44,12 +44,12 @@ def find_max_straight(num_list):
     result_list.sort()
     result_list = [str(x) for x in result_list]
     result_list = ['A' if x == '14' else x for x in result_list]
-    result_list = ['K' if x == '13' else x for x in result_list]
+    result_list = ['K' if x == '13' else x for x in result_list] 
     result_list = ['Q' if x == '12' else x for x in result_list]
     result_list = ['J' if x == '11' else x for x in result_list]
     return result_list
 
 if __name__ == '__main__':
-    num_list = [9, 10, 13, 11, 1, 12]
+    num_list = [1, 12, 11, 13]
     result = find_max_straight(num_list)
     print('此扑克牌中不存在顺子') if len(result) == 0 else print('扑克牌中的顺子为：{}'.format(result))
