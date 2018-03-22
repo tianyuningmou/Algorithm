@@ -44,7 +44,12 @@ def circle_matrix(n):
 
 
 if __name__ == '__main__':
-    print('请输入要生成回旋矩阵的维数：')
-    num = input()
-    print('\n')
-    circle_matrix(int(num))
+    while 1:
+        print('请输入要生成回旋矩阵的维数(q退出）：')
+        num = input()
+        if num == 'q':
+            print('\n程序已退出，谢谢！')
+            break
+        else:
+            print('\n生成的{}维回旋矩阵为：'.format(num))
+            circle_matrix(int(num))
