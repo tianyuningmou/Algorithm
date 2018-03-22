@@ -17,7 +17,6 @@ CHANGE:  :
 MODIFIED: : @Time : 2018/3/21 上午9:51
 """
 
-
 # 回旋矩阵的生成
 def circle_matrix(n):
     circle_matrix = [[0 for col in range(n)] for row in range(n)]
