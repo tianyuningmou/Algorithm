@@ -17,7 +17,8 @@ CHANGE:  :
 MODIFIED: : @Time : 2018/3/23 下午2:11
 """
 
-class Solution:
+
+class Solution(object):
     # 题目描述不清晰，没看太懂
     def multiply(self, A):
         first = [1]
@@ -31,13 +32,24 @@ class Solution:
             B.append(first[i]*second[-(i+1)])
         return B
 
-    def Add(self, num1, num2):
+    def add(self, num1, num2):
         # 使用sum函数
         return sum([num1, num2])
+
+    def last_remaining(self, n, m):
+        if n < 1 or m < 1:
+            return -1
+        people = list(range(n))
+        i = 0
+        for num in range(n, 1, -1):
+            i = (i + m - 1) % num
+            people.pop(i)
+        return people[-1]
 
 
 if __name__ == '__main__':
     solution = Solution()
     result0 = solution.multiply([1, 2, 3])
-    result1 = solution.Add(2, 3)
-    print(result0, '\n', result1)
+    result1 = solution.add(2, 3)
+    result2 = solution.last_remaining(10, 7)
+    print(result0, '\n', result1, '\n', result2)
