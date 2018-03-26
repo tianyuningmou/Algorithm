@@ -61,6 +61,12 @@ def find_max_straight(num_list):
     result_list = ['J' if x == '11' else x for x in result_list]
     return result_list
 
+
+# 找出最长的顺子，并输出其长度
+def find_max_length_straight(num_list):
+    pass
+
+
 if __name__ == '__main__':
     num_list = [1, 12, 11, 13]
     result = find_max_straight(num_list)
