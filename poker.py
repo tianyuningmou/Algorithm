@@ -56,7 +56,7 @@ def find_max_straight(num_list):
     # 替换到扑克牌中的表示
     result_list = [str(x) for x in result_list]
     result_list = ['A' if x == '14' else x for x in result_list]
-    result_list = ['K' if x == '13' else x for x in result_list] 
+    result_list = ['K' if x == '13' else x for x in result_list]
     result_list = ['Q' if x == '12' else x for x in result_list]
     result_list = ['J' if x == '11' else x for x in result_list]
     return result_list
@@ -64,10 +64,32 @@ def find_max_straight(num_list):
 
 # 找出最长的顺子，并输出其长度
 def find_max_length_straight(num_list):
-    pass
+    straight_one = find_max_straight(num_list)
+    num_list.sort()
+    # 因为1可以当A用，且1开头的不算顺子
+    if 1 in num_list:
+        num_list.append(14)
+        num_list.remove(1)
+    # 2开头的不算顺子
+    if 2 in num_list:
+        num_list.remove(2)
+    if len(straight_one) > 0:
+        new_num_list = [x for x in num_list if x < int(straight_one[0])]
+    else:
+        return [], 0
+    if len(new_num_list) > 0:
+        straight_two = find_max_straight(new_num_list)
+        if len(straight_one) >= len(straight_two):
+            return straight_one, len(straight_one)
+        else:
+            return straight_two, len(straight_two)
+    else:
+        return straight_one, len(straight_one)
 
 
 if __name__ == '__main__':
     num_list = [1, 12, 11, 13]
-    result = find_max_straight(num_list)
-    print('此扑克牌中不存在顺子') if len(result) == 0 else print('扑克牌中的顺子为：{}'.format(result))
+    result_one = find_max_straight(num_list)
+    print('此扑克牌中不存在顺子') if len(result_one) == 0 else print('扑克牌中最大的顺子为：{}'.format(result_one))
+    result_two, length = find_max_length_straight(num_list)
+    print('此扑克牌中不存在顺子') if length == 0 else print('此扑克牌中最长的顺子为：{}，其长度为：{}'.format(result_two, length))
