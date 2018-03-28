@@ -88,7 +88,7 @@ def find_max_length_straight(num_list):
 
 
 if __name__ == '__main__':
-    num_list = [1, 12, 11, 13]
+    num_list = [1, 12, 11, 13, 10, 8]
     result_one = find_max_straight(num_list)
     print('此扑克牌中不存在顺子') if len(result_one) == 0 else print('扑克牌中最大的顺子为：{}'.format(result_one))
     result_two, length = find_max_length_straight(num_list)
