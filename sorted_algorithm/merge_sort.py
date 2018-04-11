@@ -20,6 +20,10 @@ MODIFIED: : @Time : 2018/4/10 下午5:55
 """
 归并排序：
     将已经排好序的两个序列合并成一个
+    
+时间复杂度：O(n(logn/log2))
+空间复杂度：O(1)
+算法稳定性：稳定
 """
 
 def merge_sort(list_one, list_two):
