@@ -20,6 +20,10 @@ MODIFIED: : @Time : 2018/4/11 上午9:21
 """
 快速排序：
     随意选择一个数字作为排序基准，比基准大的数字在右，比基准小的数字在左
+    
+时间复杂度：O(n(logn/log2))
+空间复杂度：O(n(logn/log2))
+算法稳定性：不稳定
 """
 
 def quick_sort_all(sort_list, i, j):
