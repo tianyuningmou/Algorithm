@@ -67,6 +67,6 @@ def shu_sort(sort_list):
 
 
 if __name__ == '__main__':
-    list = [2, 5, 6, 3, 5]
+    list = [2, 5, 6, 3, 5, 10, 1, 4, 9]
     print(bubble_sort(list))
     print(shu_sort(list))
