@@ -26,6 +26,7 @@ MODIFIED: : @Time : 2018/4/10 下午5:18
 算法稳定性：不稳定
 """
 
+
 def selection_sort(sort_list):
     length = len(sort_list)
     for index in range(length):
@@ -33,6 +34,7 @@ def selection_sort(sort_list):
             if sort_list[index] > sort_list[i]:
                 sort_list[index], sort_list[i] = sort_list[i], sort_list[index]
     return sort_list
+
 
 if __name__ == '__main__':
     list = [3, 6, 4, 1]

@@ -26,6 +26,7 @@ MODIFIED: : @Time : 2018/4/10 下午5:55
 算法稳定性：稳定
 """
 
+
 def merge_sort(list_one, list_two):
     length_one = len(list_one)
     length_two = len(list_two)

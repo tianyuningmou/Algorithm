@@ -30,18 +30,20 @@ import math
 算法稳定性：稳定
 """
 
+
 def bubble_sort(sort_list):
     length = len(sort_list)
     for index in range(length):
         for i in range(1, length-index):
             if sort_list[i - 1] > sort_list[i]:
-                sort_list[i -1], sort_list[i] = sort_list[i], sort_list[i - 1]
+                sort_list[i - 1], sort_list[i] = sort_list[i], sort_list[i - 1]
     return sort_list
 
 
 """
 梳排序：冒泡排序的升级版
 """
+
 
 def shu_sort(sort_list):
     sort_list_len = len(sort_list)

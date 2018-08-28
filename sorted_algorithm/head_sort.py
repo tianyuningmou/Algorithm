@@ -31,6 +31,7 @@ MODIFIED: : @Time : 2018/4/11 上午9:38
 算法稳定性：不稳定
 """
 
+
 def head_sort(sort_list):
     length = len(sort_list)
     first = int(length / 2 -1)
@@ -40,6 +41,7 @@ def head_sort(sort_list):
         sort_list[end], sort_list[0] = sort_list[0], sort_list[end]
         max_headify(sort_list, 0, end - 1)
     return sort_list
+
 
 def max_headify(sort_list, start, end):
     root = start

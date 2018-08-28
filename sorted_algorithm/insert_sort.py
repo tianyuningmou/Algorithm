@@ -29,6 +29,7 @@ MODIFIED: : @Time : 2018/4/10 下午5:24
 算法稳定性：稳定
 """
 
+
 def insert_sort(sort_list):
     count = len(sort_list)
     for i in range(1, count):

@@ -26,12 +26,14 @@ MODIFIED: : @Time : 2018/4/11 上午9:21
 算法稳定性：不稳定
 """
 
+
 def quick_sort_all(sort_list, i, j):
     # 快速排序的整体函数，确定从哪排序
     if i < j:
         base = quick_sort(sort_list, i, j)
         quick_sort_all(sort_list, i, base)
         quick_sort_all(sort_list, base + 1, j)
+
 
 def quick_sort(sort_list, i, j):
     base = sort_list[i]

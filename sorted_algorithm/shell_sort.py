@@ -27,6 +27,7 @@ MODIFIED: : @Time : 2018/4/10 下午5:42
 算法稳定性：不稳定
 """
 
+
 def shell_sort(sort_list):
     length = len(sort_list)
     dist = int(length / 2)
@@ -40,6 +41,7 @@ def shell_sort(sort_list):
             sort_list[j] = temp
         dist = int(dist / 2)
     return sort_list
+
 
 if __name__ == '__main__':
     list = [3, 4, 1, 6]
