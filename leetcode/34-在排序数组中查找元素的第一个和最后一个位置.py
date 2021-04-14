@@ -5,7 +5,7 @@ Copyright () 2020
 
 All rights reserved
 
-FILE: 34.py
+FILE: 34-在排序数组中查找元素的第一个和最后一个位置.py
 AUTHOR: tianyuningmou
 DATE CREATED:  @Time : 2021/4/14 11:10 上午
 

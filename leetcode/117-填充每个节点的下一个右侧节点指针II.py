@@ -5,7 +5,7 @@ Copyright () 2020
 
 All rights reserved
 
-FILE: 117.py
+FILE: 117-填充每个节点的下一个右侧节点指针II.py
 AUTHOR: tianyuningmou
 DATE CREATED:  @Time : 2021/4/12 5:32 下午
 
@@ -15,6 +15,12 @@ VERSION: : #1
 CHANGED By: : tianyuningmou
 CHANGE:  : 
 MODIFIED: : @Time : 2021/4/12 5:32 下午
+"""
+
+"""
+117. 填充每个节点的下一个右侧节点指针II
+填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 NULL。
+初始状态下，所有 next 指针都被设置为 NULL。
 """
 
 class Node:
