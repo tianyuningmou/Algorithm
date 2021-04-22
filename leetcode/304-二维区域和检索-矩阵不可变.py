@@ -47,4 +47,3 @@ class NumMatrix(object):
 
         total = sum(_sums[i][col2 + 1] - _sums[i][col1] for i in range(row1, row2 + 1))
         return total
-
