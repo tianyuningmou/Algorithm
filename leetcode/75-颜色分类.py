@@ -38,4 +38,3 @@ class Solution(object):
             if nums[i] == 0:
                 nums[i], nums[p0] = nums[p0], nums[i]
                 p0 += 1
-
