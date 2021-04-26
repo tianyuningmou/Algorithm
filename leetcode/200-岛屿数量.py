@@ -33,7 +33,7 @@ class Solution(object):
             if 0 <= x < row and 0 <= y < col and grid[x][y] == '1':
                 self.dfs(grid, x, y)
 
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid) -> int:
         row, col = len(grid), len(grid[0])
         numOfLands = 0
         for x in range(row):
