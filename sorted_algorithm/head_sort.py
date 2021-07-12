@@ -16,6 +16,7 @@ CHANGED By: : tianyuningmou
 CHANGE:  : 
 MODIFIED: : @Time : 2018/4/11 上午9:38
 """
+import heapq
 
 """
 堆排序：
@@ -34,7 +35,7 @@ MODIFIED: : @Time : 2018/4/11 上午9:38
 
 def head_sort(sort_list):
     length = len(sort_list)
-    first = int(length / 2 -1)
+    first = int(length / 2 - 1)
     for start in range(first, -1, -1):
         max_headify(sort_list, start, length - 1)
     for end in range(length - 1, 0, -1):
@@ -58,6 +59,33 @@ def max_headify(sort_list, start, end):
             break
 
 
+def heapify(sort_list, i):
+    length = len(sort_list)
+    if i >= length:
+        return
+    else:
+        c1 = 2 * i + 1
+        c2 = 2 * i + 2
+        max = i
+        if c1 < length and sort_list[c1] < sort_list[max]:
+            max = c1
+        if c2 < length and sort_list[c2] < sort_list[max]:
+            max = c2
+        if max != i:
+            sort_list[max], sort_list[i] = sort_list[i], sort_list[max]
+            heapify(sort_list, max)
+
+            heapq.heapify()
+
+
 if __name__ == '__main__':
-    list = [3, 4, 8, 6, 1]
-    print(head_sort(list))
+    list = [11, 3, 4, 8, 6, 1, 10, 5, 9, 2]
+    sort_list = list[:3]
+    for i in range(len(sort_list) // 2 - 1, -1, -1):
+        heapify(sort_list, i)
+    for v in list[3:]:
+        if v > sort_list[0]:
+            sort_list[0] = v
+            for i in range(len(sort_list) // 2 - 1, -1, -1):
+                heapify(sort_list, i)
+    print(sort_list)
