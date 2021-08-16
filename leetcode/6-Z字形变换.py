@@ -51,4 +51,4 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    Solution().convert("PAYPALISHIRING", 3)
+    print(Solution().convert("PAYPALISHIRING", 3))

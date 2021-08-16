@@ -36,6 +36,23 @@ def water(height):
         ans += min(left_stack[i], right_stack[i]) - height[i]
     return ans
 
+    # length = len(height)
+    # if length < 3: return 0
+    # ans, index = 0, 0
+    # stack = []
+    # # while index < length:
+    # for index in range(length):
+    #     while len(stack) > 0 and height[index] > height[stack[-1]]:
+    #         tmp = stack.pop()
+    #         if len(stack) == 0:
+    #             break
+    #         ht = min(height[index], height[stack[-1]]) - height[tmp]
+    #         dis = index - stack[-1] - 1
+    #         ans += (ht * dis)
+    #     stack.append(index)
+    #     # index += 1
+    # return ans
+
 
 if __name__ == '__main__':
     f = [[True] * 3 for _ in range(2)]

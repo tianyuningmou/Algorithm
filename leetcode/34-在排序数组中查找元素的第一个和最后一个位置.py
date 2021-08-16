@@ -43,3 +43,7 @@ class Solution:
         if leftIdx <= rightIdx < len(nums) and nums[leftIdx] == target and nums[rightIdx] == target:
             return [leftIdx, rightIdx]
         return [-1, -1]
+
+
+if __name__ == '__main__':
+    Solution().searchRange([2, 4, 6, 6, 7, 7, 8], 6)

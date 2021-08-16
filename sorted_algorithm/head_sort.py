@@ -75,8 +75,6 @@ def heapify(sort_list, i):
             sort_list[max], sort_list[i] = sort_list[i], sort_list[max]
             heapify(sort_list, max)
 
-            heapq.heapify()
-
 
 if __name__ == '__main__':
     list = [11, 3, 4, 8, 6, 1, 10, 5, 9, 2]
