@@ -40,3 +40,7 @@ class Solution(object):
                 dp[j] |= dp[j - num]
 
         return dp[target]
+
+
+if __name__ == '__main__':
+    Solution().canPartition([1, 5, 11, 5])
