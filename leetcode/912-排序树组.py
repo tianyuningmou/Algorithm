@@ -30,12 +30,16 @@ class Solution:
             sortArrayAll(nums, mid + 1, right)
 
         def sortArraySingle(nums, left, right):
+            # 选取中间值为基准值
             pivot = (left + right) // 2
+            # 将基准值和最后一个数更换位置
             nums[pivot], nums[right] = nums[right], nums[pivot]
+            # 从左边开始迭代，比基准值nums[right]小的放在左边，并把left+1
             for i in range(left, right):
                 if nums[i] < nums[right]:
                     nums[i], nums[left] = nums[left], nums[i]
                     left += 1
+            # 将左边界和基准值交换位置，此位置的左边都比基准值小，右边都比基准值大
             nums[left], nums[right] = nums[right], nums[left]
             return left
 
