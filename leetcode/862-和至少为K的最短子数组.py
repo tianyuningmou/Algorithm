@@ -19,6 +19,7 @@ MODIFIED: : @Time : 2021/11/4 10:50 上午
 
 import collections
 
+
 class Solution(object):
     def shortestSubarray(self, nums, k: int) -> int:
         length = len(nums)
