@@ -36,10 +36,10 @@ class DurationCalculate(object):
         :param date_time: 截止时间，可不填
         :return:
         """
-        return cls.duration_calculate(durations).seconds
+        return cls.duration_calculate(durations, date_time).seconds
 
     @classmethod
-    def duration_calculate_to_minutes(cls, durations, *args, date_time):
+    def duration_calculate_to_minutes(cls, durations, date_time, *args):
         """
         计算多个时间段之和，重叠部分不计算，并转换成分钟
         :param durations:
@@ -49,16 +49,16 @@ class DurationCalculate(object):
         :return:
         """
         if args or args[0] == 'ceil':
-            return ceil(cls.duration_calculate(durations).seconds / 60.0)
+            return ceil(cls.duration_calculate(durations, date_time).seconds / 60.0)
         elif args[0] == 'round':
-            return round(cls.duration_calculate(durations).seconds / 60.0)
+            return round(cls.duration_calculate(durations, date_time).seconds / 60.0)
         elif args[0] == 'floor':
-            return floor(cls.duration_calculate(durations).seconds / 60.0)
+            return floor(cls.duration_calculate(durations, date_time).seconds / 60.0)
         else:
             return "请输入['ceil'] or ['round'] or ['floor'], 或者不填"
 
     @classmethod
-    def duration_calculate_to_hours(cls, durations, *args, date_time):
+    def duration_calculate_to_hours(cls, durations, date_time, *args):
         """
         计算多个时间段之和，重叠部分不计算，并转换成小时
         :param durations:
@@ -68,11 +68,11 @@ class DurationCalculate(object):
         :return:
         """
         if args or args[0] == 'ceil':
-            return ceil(cls.duration_calculate(durations).seconds / 3600.0)
+            return ceil(cls.duration_calculate(durations, date_time).seconds / 3600.0)
         elif args[0] == 'round':
-            return round(cls.duration_calculate(durations).seconds / 3600.0)
+            return round(cls.duration_calculate(durations, date_time).seconds / 3600.0)
         elif args[0] == 'floor':
-            return floor(cls.duration_calculate(durations).seconds / 3600.0)
+            return floor(cls.duration_calculate(durations, date_time).seconds / 3600.0)
         else:
             return "请输入['ceil'] or ['round'] or ['floor'], 或者不填"
 
@@ -85,10 +85,10 @@ class DurationCalculate(object):
         :param date_time: 截止时间，可不填
         :return:
         """
-        return cls.duration_calculate(durations).days
+        return cls.duration_calculate(durations, date_time).days
 
     @classmethod
-    def duration_calculate_to_months(cls, durations, *args, date_time):
+    def duration_calculate_to_months(cls, durations, date_time, *args):
         """
         计算多个时间段之和，重叠部分不计算，并转换成月
         :param durations:
@@ -98,16 +98,16 @@ class DurationCalculate(object):
         :return:
         """
         if args or args[0] == 'ceil':
-            return ceil(cls.duration_calculate_to_days(durations) / 30.0)
+            return ceil(cls.duration_calculate_to_days(durations, date_time) / 30.0)
         elif args[0] == 'round':
-            return round(cls.duration_calculate_to_days(durations) / 30.0)
+            return round(cls.duration_calculate_to_days(durations, date_time) / 30.0)
         elif args[0] == 'floor':
-            return floor(cls.duration_calculate_to_days(durations) / 30.0)
+            return floor(cls.duration_calculate_to_days(durations, date_time) / 30.0)
         else:
             return "请输入['ceil'] or ['round'] or ['floor'], 或者不填"
 
     @classmethod
-    def duration_calculate(cls, durations, date_time):
+    def duration_calculate(cls, durations, date_time=None):
         """
         计算时间段差值的基础算法
         :param durations:

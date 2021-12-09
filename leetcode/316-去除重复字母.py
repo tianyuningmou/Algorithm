@@ -46,4 +46,4 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    Solution().removeDuplicateLetters('cbacdcbc')
+    print(Solution().removeDuplicateLetters('cbacdcbc'))
