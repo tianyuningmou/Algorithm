@@ -43,7 +43,7 @@ class Solution(object):
             if max_pos >= i:
                 max_pos = max(max_pos, i + nums[i])
                 if i == end:
-                    max_pos = i
+                    end = max_pos
                     steps += 1
         return steps
 

@@ -50,7 +50,7 @@ class Solution(object):
                     second = second_
                 if total > target:
                     third_ = third - 1
-                    while third_ > second and nums[third_ ] == nums[third]:
+                    while third_ > second and nums[third_] == nums[third]:
                         third_ -= 1
                     third = third_
         return res

@@ -38,4 +38,4 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    print(Solution().groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+    print(Solution().groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))

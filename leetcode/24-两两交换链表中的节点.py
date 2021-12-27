@@ -33,8 +33,7 @@ class ListNode(object):
 
 class Solution(object):
     def swapPairs(self, head: ListNode) -> ListNode:
-        dummyHead = ListNode(0)
-        dummyHead.next = head
+        dummyHead = ListNode(0, head)
         temp = dummyHead
         while temp.next and temp.next.next:
             node1 = temp.next
