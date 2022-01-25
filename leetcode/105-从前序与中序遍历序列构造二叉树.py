@@ -44,8 +44,8 @@ class Solution(object):
             # 前序遍历的第一个节点就是根节点
             preorder_root = preorder_left
             # 获取此节点在中序遍历中的位置
-            inorder_root = inorder_dict[preorder[preorder_left]]
-            root = TreeNode(preorder[preorder_left])
+            inorder_root = inorder_dict[preorder[preorder_root]]
+            root = TreeNode(preorder[preorder_root])
             size_left_subtree = inorder_root - inorder_left
             # 分别构建左右子树
             root.left = myBuildTree(preorder_left + 1, preorder_left + size_left_subtree, inorder_left,
@@ -61,3 +61,14 @@ class Solution(object):
     @classmethod
     def buildTreeIter(cls, preorder: List[int], inorder: List[int]) -> TreeNode:
         pass
+
+
+if __name__ == '__main__':
+    four = TreeNode(4)
+    five = TreeNode(5)
+    six = TreeNode(6)
+    seven = TreeNode(7)
+    two = TreeNode(2, four, five)
+    three = TreeNode(3, six, seven)
+    one = TreeNode(1, two, three)
+    print(Solution.inorder(one))
